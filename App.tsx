@@ -4,7 +4,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      {/*Header */}
+      {/* Header */}
       <View style={styles.header}>
         <View>
           <Text style={styles.headerTitle}>Café do Código</Text>
@@ -23,14 +23,44 @@ export default function App() {
           <Text style={styles.grettingSubtitle}>Que tal um café hoje?
           </Text>
         </View>
+
         <View style={styles.featured}>
           <Image source={require('./assets/coffee.jpg')}
-          style={styles.image}></Image>
-          <Text>Cappucino Especial</Text>
-          <Text>Cremoso e delicioso</Text>
-          <Text>R$ 12,90</Text>
+            style={styles.image}></Image>
+          <Text style={styles.featuredTitle}>Cappucino Especial</Text>
+          <Text style={styles.featureDesc}>Cremoso e delicioso</Text>
+          <Text style={styles.featuredprice}>R$ 12,90</Text>
+        </View>
+
+        <Text style={styles.sectionTitle}>Nosso cardápio</Text>
+
+        <View style={styles.card}>
+          <View style={styles.cardItem}>
+            <Text style={styles.cardTitle}>Espresso</Text>
+            <Text style={styles.cardDescripition}>Puro e forte</Text>
+            <Text style={styles.cardPrice}>R$ 7,00</Text>
+          </View>
+
+          <View style={styles.cardItem}>
+            <Text style={styles.cardTitle}>Cappucino</Text>
+            <Text style={styles.cardDescripition}>Clássico com espuma</Text>
+            <Text style={styles.cardPrice}>R$ 12,90</Text>
+          </View>
+
+          <View style={styles.cardItem}>
+            <Text style={styles.cardTitle}>Latte</Text>
+            <Text style={styles.cardDescripition}>Leite cremoso</Text>
+            <Text style={styles.cardPrice}>R$ 11,50</Text>
+          </View>
+
+          <View style={styles.cardItem}>
+            <Text style={styles.cardTitle}>Mocha</Text>
+            <Text style={styles.cardDescripition}>Toque de Chocolate</Text>
+            <Text style={styles.cardPrice}>R$ 13,50</Text>
+          </View>
         </View>
       </View>
+
       {/*Conteúdo */}
 
     </ScrollView>
@@ -46,7 +76,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingTop: 60,
     paddingHorizontal: 24,
-    paddingBottom: 20,
+    paddingBottom:20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -70,10 +100,14 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   content: {
-    padding: 24
+    paddingHorizontal: 24,
+    fontSize:32,
+    fontWeight:"800",
+    color:"#2f2f2c"
+
   },
   grettingSection: {
-    marginTop: 10,
+    marginTop:20,
     marginBottom: 24
   },
   grettingTitle: {
@@ -97,10 +131,67 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     elevation: 4
   },
-  image:{
+  image: {
     width: '100%',
-    height:188,
+    height: 188,
     borderRadius: 16,
     marginBottom: 16
+  },
+  featuredTitle: {
+    fontSize: 20,
+    fontWeight: '800',
+    color: "#2f2d2c"
+  },
+  featureDesc: {
+    fontSize: 14,
+    marginTop: 4,
+    color: "#9b9b9b",
+  },
+  featuredprice: {
+    fontSize: 20,
+    fontWeight: '800',
+    color: "#C67C4E",
+    marginTop: 12,
+  },
+  sectionTitle: {
+    fontSize: 22,
+    fontWeight: "800",
+    color: "#2f2d2c",
+    marginBottom: 16
+  },
+  card: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    marginBottom: 20
+  },
+  cardItem: {
+    width: "48%",
+    backgroundColor: "#ffffff",
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    elevation: 3,
+    marginBottom:16
+  },
+  cardTitle: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: "#2f2d2c",
+  },
+  cardDescripition: {
+    fontSize: 12,
+    color: "#9b9b9b",
+    marginTop: 4,
+    lineHeight: 16
+  },
+  cardPrice: {
+    fontSize: 16,
+    fontWeight: "800",
+    color: "#C67c4e",
+    marginTop: 12
   }
+
 })
